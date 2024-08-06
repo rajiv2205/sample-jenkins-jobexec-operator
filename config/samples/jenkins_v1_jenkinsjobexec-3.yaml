@@ -1,0 +1,12 @@
+apiVersion: jenkins.operatortest.io/v1
+kind: JenkinsJobExec
+metadata:
+  labels:
+    app.kubernetes.io/name: sample-jenkins-jobexec-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: jenkinsjobexec-with-param
+spec:
+  jobname: test_job_with_param
+  parameters:
+    test: successrun_from_operator
+

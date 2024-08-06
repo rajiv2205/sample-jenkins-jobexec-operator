@@ -1,0 +1,23 @@
+# permissions for end users to view jenkinsjobexecs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: sample-jenkins-jobexec-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: jenkinsjobexec-viewer-role
+rules:
+- apiGroups:
+  - jenkins.operatortest.io
+  resources:
+  - jenkinsjobexecs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - jenkins.operatortest.io
+  resources:
+  - jenkinsjobexecs/status
+  verbs:
+  - get

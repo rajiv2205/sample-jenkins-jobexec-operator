@@ -1,0 +1,15 @@
+apiVersion: jenkins.operatortest.io/v1
+kind: JenkinsJobExec
+metadata:
+  labels:
+    app.kubernetes.io/name: sample-jenkins-jobexec-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: jenkinsjobexec-sample-2
+spec:
+  jobname: test_job
+  parameters: {}
+  secretRef:
+    name: my-secret
+  configMapRef:
+    name: my-configmap
+
