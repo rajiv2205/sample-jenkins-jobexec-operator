@@ -9,4 +9,7 @@ spec:
   jobname: test_job_with_param
   parameters:
     test: successrun_from_operator
-
+  secretRef:
+    name: my-secret
+  configMapRef:
+    name: my-configmap

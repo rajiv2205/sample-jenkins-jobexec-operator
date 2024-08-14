@@ -6,9 +6,6 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: jenkinsjobexec-sample
 spec:
-  #jenkinsURL: http://localhost:8080/
-  #token: 11884462973f6f7cfe34b88927612c4f58
-  #username: rajiv
   jobname: test_job
   parameters: {}
   secretRef:

@@ -90,7 +90,7 @@ func TriggerJobWithAndWithoutParams(jenkinsURL, jobName string, parameters map[s
 
 func PollQueueBuild(jenkinsURL, jobName string, buildID int, username, apiToken string) (string, error) {
 	// polling jenkins queue to get the actual job url and build number of the job from the queue
-	
+
 	statusURL := fmt.Sprintf("%s/queue/item/%d/api/json", jenkinsURL, buildID)
 	client := &http.Client{}
 	//fmt.Println(statusURL)
@@ -116,7 +116,6 @@ func PollQueueBuild(jenkinsURL, jobName string, buildID int, username, apiToken 
 		var result map[string]interface{}
 
 		json.Unmarshal(body, &result)
-
 
 		executable_interface_var := result["executable"]
 		if executable_interface_var == nil {
@@ -164,7 +163,7 @@ func PollBuildStatus(jobURL string, username, apiToken string) (string, string, 
 			return "", "", 0, err
 		}
 		defer resp.Body.Close()
-		
+
 		if resp.StatusCode != http.StatusOK {
 			return "", "", 0, fmt.Errorf("failed to get build status: %s", resp.Status)
 		}
